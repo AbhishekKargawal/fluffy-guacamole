@@ -48,6 +48,7 @@ with warnings.catch_warnings():
 if isinstance(shap_interaction_values, list):
     shap_interaction_values = shap_interaction_values[1]
 
-shap.decision_plot(expected_value, shap_values, features_display, show=False)
+fig = plt.subplots(figsize=(15, 10), dpi=300)
+shap.decision_plot(expected_value, shap_values, features_display, auto_size_plot=False, show=False)
 
 plt.savefig("summary_plot.png")
